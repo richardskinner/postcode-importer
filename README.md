@@ -39,7 +39,7 @@ making an additional query to an API to make the conversion possible, pointless 
 Having said that, the Import, Downloader and CsvFile classes as have contracts to allow the easy replacement of 
 other classes if we choose to make business decisions on type of file we want to import or location of source data.
 
-I have also, tried a DDD approach focusing my implementations around the Domain which postcode. This allowed the 
+I have also, tried a DDD approach focusing my implementations around the Domain which is postcode. This allowed the 
 application to be small, with the domain architecture obvious and understandable.
 
 ## Improvements
