@@ -59,3 +59,13 @@ specific objects.
 #### Migration Factories/Seeder
 No use of factories or seeders which may have sped up the process of handling data and testing.
 This was due to the fact I went for a DDD approach and find Models and Entities don't work well together.
+
+#### Querying vi Lat/Lng
+Due to the dat provided by Ordnance Survey, I couldn't query this data via Northings and Eastings effectively. 
+Therefore, I left it out. If there was data I could have queried, MySQL have a few functions to use for this, to get
+data from a radius using ACOS, COS, RADIANS and SIN. Google have kindly provided the below for this. However, these 
+functions can't be used in a SQLite DB or other document based DBs.
+
+```php
+3959 * ACOS( COS( radians(?) ) * COS( RADIANS( postocdes.`latitude` ) ) * COS( radians( postcodes.`longitude` ) - RADIANS(?) ) + SIN( RADIANS(?) ) * SIN( RADIANS( postcodes.`latitude` ) ) )
+```
